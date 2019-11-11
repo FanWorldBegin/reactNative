@@ -16,72 +16,11 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-import Flatist from './component/Flatlist';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Flatist from './component/Flatlist';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+import { AppStackNavigator } from './navigators/appNavigator';
+import { createAppContainer } from 'react-navigation'
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Flatist/>
-          <Text>矢量图标</Text>
-          <Icon name="rocket" size={30} color="#900"></Icon>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
-
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
-
-export default App;
+// 将导航器转化成页面元素，可以像组件一样使用导航器
+export default createAppContainer(AppStackNavigator);

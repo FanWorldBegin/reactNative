@@ -8,9 +8,9 @@ import HomePage from '../pages/homePage';
 // 创建导航器
 
 export const AppStackNavigator = createStackNavigator(
-{
-    HomePage: {
-            screen: HomePage
+    {
+        HomePage: {
+                screen: HomePage
         },
         Page1: {
             screen: Page1
@@ -19,4 +19,9 @@ export const AppStackNavigator = createStackNavigator(
             screen: Page2
         },
     },
+    {
+        defaultNavigationOptions: {
+            // 全局默认属性，对当前导航器所有页面有效
+        }
+    }
 );
